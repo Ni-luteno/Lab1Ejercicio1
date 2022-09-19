@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Lab1Ejercicio1">
+  <ClassDiagramComponents>
+    <Class name="Bateria" package="lab1ejercicio1" visibility="public" xPosition="976.0" yPosition="153.0">
+      <Fields>
+        <Field name="carga" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="carga"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getCarga" returnType="int" visibility="public"/>
+        <Method name="setCarga" returnType="void" visibility="public">
+          <Argument type="int" name="carga"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Hombre" package="lab1ejercicio1" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="leer" type="Scanner" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="jugarConRobot" returnType="void" visibility="public">
+          <Argument type="Robot" name="r"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getEdad" returnType="int" visibility="public"/>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="int" name="edad"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Robot" package="lab1ejercicio1" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="bat" type="Bateria" visibility="private"/>
+        <Field name="prendido" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="avanzar" returnType="void" visibility="public">
+          <Argument type="int" name="pasos"/>
+        </Method>
+        <Method name="retroceder" returnType="void" visibility="public">
+          <Argument type="int" name="pasos"/>
+        </Method>
+        <Method name="despertar" returnType="void" visibility="public"/>
+        <Method name="dormir" returnType="void" visibility="public"/>
+        <Method name="recargar" returnType="void" visibility="public"/>
+        <Method name="bateriaLlena" returnType="boolean" visibility="public"/>
+        <Method name="bateriaVacia" returnType="boolean" visibility="public"/>
+        <Method name="energiaActual" returnType="int" visibility="public"/>
+        <Method name="getBat" returnType="Bateria" visibility="public"/>
+        <Method name="setBat" returnType="void" visibility="public">
+          <Argument type="Bateria" name="bat"/>
+        </Method>
+        <Method name="isPrendido" returnType="boolean" visibility="public"/>
+        <Method name="setPrendido" returnType="void" visibility="public">
+          <Argument type="boolean" name="prendido"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TestJuego" package="lab1ejercicio1" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="lab1ejercicio1.Hombre" target="lab1ejercicio1.Robot" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bat" source="lab1ejercicio1.Robot" target="lab1ejercicio1.Bateria" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab1ejercicio1.Robot" target="lab1ejercicio1.Bateria" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
